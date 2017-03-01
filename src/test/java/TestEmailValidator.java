@@ -32,5 +32,13 @@ public class TestEmailValidator {
 		boolean result = validator.validate("TestAddress@email.com");
 		assertTrue(result);
 	}
+	
+	
+	@Test
+	public void testEmailValidatorRejectsAddressWithSpace() {
+		EmailValidator validator = getValidator();
+		boolean result = validator.validate("TestAddress @email.com");
+		assertFalse(result);
+	}
 
 }
