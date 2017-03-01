@@ -4,7 +4,7 @@ public class EmailValidator {
 	
 	public boolean validate(String address){
 		
-		if(address.contains(".") && address.contains("@")){
+		if(address.contains(".") && address.contains("@") && !(address.contains(" ")) && (address.length() <254)){
 			
 			return true;
 		}
