@@ -39,7 +39,7 @@ public class TestEmailValidator {
 	}
 	
 	@Test
-	public void testEmailValidatorRejectsAddressWith254Characters() {
+	public void testEmailValidatorRejectsAddressWith255Characters() {
 		EmailValidator validator = getValidator();
 		boolean result = validator.validate(""
 				+ "0123456789"
@@ -67,7 +67,7 @@ public class TestEmailValidator {
 				+ "0123456789"
 				+ "0123456789"
 				+ "0123456789" // 250 chars
-				+ "@1.2"); //254 chars
+				+ "@1.ab"); //255 chars
 		assertFalse(result);
 	}
 	
